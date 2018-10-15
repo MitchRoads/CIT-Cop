@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const config = require('./botconfig.json');
 const { prefix, token } = require('./botconfig.json');
 const func = require('./functions.js');
+const weather = require('weather-js')
 
   client.on("ready", async () => {
   console.log(`${client.user.username} is on his way to the tech team!`);
@@ -21,6 +22,45 @@ let result = Math.floor((Math.random() * replies.length));
                 .setTimestamp();
             return message.channel.send(copembed);
     }
+});
+
+client.on('message', async (message) => {
+  
+  if (message.startsWith(${prefix}weather)) {
+ const Discord = require('discord.js');
+ let args = message.content.slice(1).split(" ");
+ weather.find({search: args.join(" "), degreeType: 'F'), function(err, result) {
+if (err) message.channel.send(err);
+
+
+
+
+
+message.channel.send(JSON.stringify(result[0].current, null, 2));
+
+
+let current = result[0].current;
+let location = result[0].location; 
+
+
+const weatherembed = new Discord.RichEmbed()
+ .setTitle(`Weather For ${current.observationpoint}`)
+ .setDescription(`**${current.skytext}**`)
+ .setThumbnail(current.imageUrl)
+ .setColor(0x374f6b)
+ .addField('Timezone', `UTC${location.timezone}`, true)
+ .addField('Degree Type',location.degreetype, true)
+ .addField('Temperature', `${current.temperature} Degrees`, true)
+ .addField('Feels Like', `{current.feelslike} Degrees`, true)
+ .addField('Winds',current.winddisplay, true)
+ .addField('Humidity', `${current.humidity}%`, true)
+
+
+  message.channel.send({weatherembed});
+ });
+
+}
+  
   
 });
 
