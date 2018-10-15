@@ -40,22 +40,20 @@ return;
 
 let current = result[0].current;
 let location = result[0].location; 
-let forecast = result[0].forecast;
-
+   
 const weatherembed = new Discord.RichEmbed()
  .setTitle(`Weather For ${current.observationpoint}`)
  .setDescription(`**${current.skytext}**`)
  .setThumbnail(current.imageUrl)
  .setColor(0x374f6b)
  .addField('Timezone', `UTC${location.timezone}`, true)
- .addField('Today', `${current.day}`, true)
- .addField('Date', `${current.date}`, true)
+ .addField('Timezone Day', `${current.day}`, true)
+ .addField('Timezone Date', `${current.date}`, true)
  .addField('Degree Type',location.degreetype, true)
  .addField('Temperature', `${current.temperature} Degrees`, true)
  .addField('Feels Like', `${current.feelslike} Degrees`, true)
  .addField('Winds',current.winddisplay, true)
  .addField('Humidity', `${current.humidity}%`, true)
- .addField('Precip', `${forecast.precip}`, true)
  .setTimestamp();
   return message.channel.send(weatherembed);
  });
