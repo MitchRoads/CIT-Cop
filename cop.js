@@ -32,6 +32,11 @@ client.on('message', async (message) => {
  weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) {
 if (err) message.channel.send(err);
 
+   
+   [if (result === undefined || result.length === 0)] {
+message.channel.send(`You didn't put in  valid location, please enter one.`)
+return;
+}
 
 let current = result[0].current;
 let location = result[0].location; 
