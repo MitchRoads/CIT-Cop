@@ -48,13 +48,14 @@ const weatherembed = new Discord.RichEmbed()
  .setThumbnail(current.imageUrl)
  .setColor(0x374f6b)
  .addField('Timezone', `UTC${location.timezone}`, true)
+ .addField('Today', `${current.day}`, true)
+ .addfield('Date', `${current.date}`, true)
  .addField('Degree Type',location.degreetype, true)
  .addField('Temperature', `${current.temperature} Degrees`, true)
  .addField('Feels Like', `${current.feelslike} Degrees`, true)
  .addField('Winds',current.winddisplay, true)
  .addField('Humidity', `${current.humidity}%`, true)
- .addField('Current Day', `${current.day}`, true)
-
+ .setTimestamp();
   return message.channel.send(weatherembed);
  });
 
