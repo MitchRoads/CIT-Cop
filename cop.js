@@ -14,7 +14,7 @@ client.on('message', async (message) => {
 const helloResponses = ["Hello Soldier, move along.", "You have the right to remain silent.", "Stay well Soldier."];
   let args = message.content.slice(1).split(" ");
    switch (args[0].toLowerCase()) {
-        case "hello":
+        case `${prefix}hello`:
             var response = helloResponses [Math.floor(Math.random()*helloResponses.length)];
 
             message.channel.send(response).then().catch(console.error);
