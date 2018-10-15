@@ -40,7 +40,7 @@ return;
 
 let current = result[0].current;
 let location = result[0].location; 
-
+let forecast = result[0].forecast;
 
 const weatherembed = new Discord.RichEmbed()
  .setTitle(`Weather For ${current.observationpoint}`)
@@ -55,6 +55,7 @@ const weatherembed = new Discord.RichEmbed()
  .addField('Feels Like', `${current.feelslike} Degrees`, true)
  .addField('Winds',current.winddisplay, true)
  .addField('Humidity', `${current.humidity}%`, true)
+ .addField('Precip', `${forecast.precip}`, true)
  .setTimestamp();
   return message.channel.send(weatherembed);
  });
