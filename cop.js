@@ -16,8 +16,8 @@ let replies = ["Hello Soldier, move along.", "You have the right to remain silen
 let result = Math.floor((Math.random() * replies.length));
                const copembed = new Discord.RichEmbed()
                 .setTitle(`Response to ${message.author.tag}`)
+                .setDescription(replies[result])
                 .setColor(`#374f6b`)
-                .addField(`Hello!`, "replies[result]")
                 .setTimestamp();
             return message.channel.send(copembed);
     }
