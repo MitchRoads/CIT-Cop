@@ -26,9 +26,9 @@ let result = Math.floor((Math.random() * replies.length));
 
 client.on('message', async (message) => {
   
-  if (message.startsWith(${prefix}weather)) {
+ if (message.content.startsWith(`${prefix}weather`)) {
  const Discord = require('discord.js');
- let args = message.content.slice(1).split(" ");
+ let args = message.content.slice(1).split(" "); 
  weather.find({search: args.join(" "), degreeType: 'F'), function(err, result) {
 if (err) message.channel.send(err);
 
