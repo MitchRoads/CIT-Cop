@@ -3,6 +3,7 @@ const superagent = require("snekfetch");
 const client = new Discord.Client();
 const config = require('./botconfig.json');
 const { prefix, token } = require('./botconfig.json');
+const func = require('./functions.js');
 
   client.on("ready", async () => {
   console.log(`${client.user.username} is on his way to the tech team!`);
