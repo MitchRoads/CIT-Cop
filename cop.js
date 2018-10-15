@@ -15,7 +15,7 @@ client.on('message', async (message) => {
     if (message.content.startsWith(`${prefix}hello`)) {
                const copembed = new Discord.RichEmbed()
                 .setTitle(`Citizen Reply`)
-                .addField(`You have the right to remain silent.`)
+                .setDescription(`You have the right to remain silent.`)
                 .setColor(`#374f6b`)
                 .setTimestamp();
             return message.channel.send(copembed);
