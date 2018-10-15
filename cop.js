@@ -34,7 +34,7 @@ if (err) message.channel.send(err);
 
    
    if (result === undefined || result.length === 0) {
-message.channel.send(`You didn't put in  valid location, please enter one.`)
+message.channel.send(`You didn't put in valid **location**, please enter one.`)
 return;
 }
 
@@ -45,7 +45,7 @@ let location = result[0].location;
 const weatherembed = new Discord.RichEmbed()
  .setTitle(`Weather For ${current.observationpoint}`)
  .setDescription(`**${current.skytext}**`)
- .setThumbnail(current.imagerelativeurl)
+ .setThumbnail(current.imageUrl)
  .setColor(0x374f6b)
  .addField('Timezone', `UTC${location.timezone}`, true)
  .addField('Degree Type',location.degreetype, true)
