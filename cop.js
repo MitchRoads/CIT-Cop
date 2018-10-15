@@ -33,7 +33,7 @@ client.on('message', async (message) => {
 if (err) message.channel.send(err);
 
    
-   [if (result === undefined || result.length === 0)] {
+   if (result === undefined || result.length === 0) {
 message.channel.send(`You didn't put in  valid location, please enter one.`)
 return;
 }
