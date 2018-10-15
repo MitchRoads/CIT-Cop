@@ -11,16 +11,17 @@ const func = require('./functions.js');
 });
 
 client.on('message', async (message) => {
+const helloResponses = ["Hello Soldier, move along.", "You have the right to remain silent.", "Stay well Soldier."];
+  let args = message.content.slice(1).split(" ");
+   switch (args[0].toLowerCase()) {
+        case "hello":
+            var response = helloResponses [Math.floor(Math.random()*helloResponses.length)];
 
-    if (message.content.startsWith(`${prefix}hello`)) {
-               const copembed = new Discord.RichEmbed()
-                .setTitle(`Citizen Reply`)
-                .setDescription(`You have the right to remain silent.`)
-                .setColor(`#374f6b`)
-                .setTimestamp();
-            return message.channel.send(copembed);
+            message.channel.send(response).then().catch(console.error);
+            break;
+        default:
+            break;
     }
-  
 });
 
 client.login(process.env.BOT_TOKEN); 
