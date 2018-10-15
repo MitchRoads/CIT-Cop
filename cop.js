@@ -45,7 +45,7 @@ let location = result[0].location;
 const weatherembed = new Discord.RichEmbed()
  .setTitle(`Weather For ${current.observationpoint}`)
  .setDescription(`**${current.skytext}**`)
- .setThumbnail(current.imageUrl)
+ .setThumbnail(current.imagerelativeurl)
  .setColor(0x374f6b)
  .addField('Timezone', `UTC${location.timezone}`, true)
  .addField('Degree Type',location.degreetype, true)
