@@ -15,7 +15,7 @@ client.on('message', async (message) => {
 let replies = ["Hello Soldier, move along.", "You have the right to remain silent.", "Stay well Soldier.", "WHOA, that is A LOT of weed!"];
 let result = Math.floor((Math.random() * replies.length));
                const copembed = new Discord.RichEmbed()
-                .setTitle(`Response to ${message.author.tag}`)
+                .setTitle(`Famous COP Quote`)
                 .setDescription(replies[result])
                 .setColor(`#374f6b`)
                 .setTimestamp();
