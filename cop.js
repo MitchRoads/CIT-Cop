@@ -50,7 +50,7 @@ const weatherembed = new Discord.RichEmbed()
  .addField('Timezone', `UTC${location.timezone}`, true)
  .addField('Degree Type',location.degreetype, true)
  .addField('Temperature', `${current.temperature} Degrees`, true)
- .addField('Feels Like', `{current.feelslike} Degrees`, true)
+ .addField('Feels Like', `${current.feelslike} Degrees`, true)
  .addField('Winds',current.winddisplay, true)
  .addField('Humidity', `${current.humidity}%`, true)
 
