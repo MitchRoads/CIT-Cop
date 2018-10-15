@@ -10,4 +10,17 @@ const func = require('./functions.js');
   client.user.setActivity("Cop In-Training 2.0", {type: "WATCHING"});
 });
 
+client.on('message', async (message) => {
+
+    if (message.content.startsWith(`${prefix}hello`)) {
+               const copembed = new Discord.RichEmbed()
+                .setTitle(`Citizen Reply`)
+                .addField(`You have the right to remain silent.`)
+                .setColor(`#374f6b`)
+                .setTimestamp();
+            return message.channel.send(copembed);
+    }
+  
+});
+
 client.login(process.env.BOT_TOKEN); 
