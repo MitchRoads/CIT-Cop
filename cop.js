@@ -15,10 +15,10 @@ client.on('message', async (message) => {
 let replies = ["Hello Soldier, move along.", "You have the right to remain silent.", "Stay well Soldier."];
 let result = Math.floor((Math.random() * replies.length));
                const copembed = new Discord.RichEmbed()
-                .setTitle(`Respond to message.author.tag`)
+                .setTitle(`Response to {message.author.tag}`)
+                .setDescription("replies[result]")
                 .setColor(`#374f6b`)
-                .addField("Response", replies[result])
-                .setTimestamp(Date());
+                .setTimestamp();
             return message.channel.send(copembed);
     }
   
