@@ -33,12 +33,6 @@ client.on('message', async (message) => {
 if (err) message.channel.send(err);
 
 
-
-
-
-message.channel.send(JSON.stringify(result[0].current, null, 2));
-
-
 let current = result[0].current;
 let location = result[0].location; 
 
