@@ -12,6 +12,7 @@
     "discord.js": "^11.4.2",
     "ms": "^2.1.1",
     "snekfetch": "^4.0.4",
-    "superagent": "^3.8.3"
+    "superagent": "^3.8.3",
+    "weather-js": "^2.0.0",
   }
 }
