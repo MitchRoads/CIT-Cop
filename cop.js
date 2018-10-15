@@ -11,8 +11,8 @@ const func = require('./functions.js');
 });
 
 client.on('message', async (message) => {
-    if (message.content.startsWith(`${prefix}hello`)) {
-let replies = ["Hello Soldier, move along.", "You have the right to remain silent.", "Stay well Soldier."];
+    if (message.content.startsWith(`${prefix}quote`)) {
+let replies = ["Hello Soldier, move along.", "You have the right to remain silent.", "Stay well Soldier.", "WHOA, that is A LOT of weed!"];
 let result = Math.floor((Math.random() * replies.length));
                const copembed = new Discord.RichEmbed()
                 .setTitle(`Response to ${message.author.tag}`)
