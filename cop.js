@@ -53,6 +53,7 @@ const weatherembed = new Discord.RichEmbed()
  .addField('Feels Like', `${current.feelslike} Degrees`, true)
  .addField('Winds',current.winddisplay, true)
  .addField('Humidity', `${current.humidity}%`, true)
+ .addField('Current Day', `${current.day}`, true)
 
   return message.channel.send(weatherembed);
  });
