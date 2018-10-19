@@ -5,8 +5,6 @@
   "main": "cop.js",
   "scripts": {
    "start": "node cop.js",
-     "encrypt": "encrypt botconfig.json botconfig.json.cast5",
-    "decrypt": "decrypt botconfig.json.cast5 botconfig.json"
   },
   "author": "Soldz",
   "license": "ISC",
