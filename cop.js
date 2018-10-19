@@ -147,8 +147,8 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	 }
 	
 	 if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
-let pages = ['** General Commands** \n\n **ping**', 
-  '**Rosters Commands** \n\n **knights**', ]; 
+let pages = ['**Page 1** \n\n **Test**', 
+  '**Page 2** \n\n **Testing**', ]; 
 let page = 1;
 
 const pagesembed = new Discord.RichEmbed()
@@ -178,7 +178,7 @@ const forwardsFitler = (reaction, user) => reaction.emoji.name === ('➡') && us
 const forwards = message.createReactionCollector(forwardsFitler, { time: 250000});
 
 forwards.on('collect', r => {
- if (page === 2) return; 
+ if (page === pages.length) return; 
 page++;
 pagesembed.setDescription(pages[page-1]);
 pagesembed.setFooter(`Page ${page} of ${pages.length}`);
