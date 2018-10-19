@@ -147,7 +147,7 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	 }
 	
 	 if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
-let pages = ['** General Commands** \n\n **ping**  \n*Shows The Responce Time Of The Bot* \n **help**  \n*Shows The Help Command* \n'];
+let pages = ['** General Commands** \n\n **ping**  \n*Shows The Responce Time Of The Bot* \n **help**  \n*Shows The Help Command*'];
 let page = 1;
 
 const pagesembed = new Discord.RichEmbed()
