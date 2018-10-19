@@ -165,7 +165,7 @@ const backwardsFitler = (reaction, user) => reaction.emoji.name === (`⬅`) && u
 const backwards = message.creatReactionCollector(backwardsFitler, { time: 60000 });
 
 backwards.on('collect' r => {
- if page == 1)
+ if (page == 1)
  page--;
  pagesembed.setDescription(pages[page-1]);
  pagesembed.setFooter(`Page ${page} of ${pages.length}`);
@@ -175,7 +175,7 @@ const forwardsFitler = (reaction, user) => reaction.emoji.name === ('➡') && us
 const forwards = message.createReactionCollector(forwardsFitler, { time: 60000});
 
 forwards.on('collect' r => {
- if page == 1)
+ if (page == 1)
  page--;
  moreembed.setDescription(pages[page-1]);
  moreembed.setFooter(`Page ${page} of ${pages.length}`);
