@@ -165,22 +165,22 @@ const backwardsFilter = (reaction, user) => reaction.emoji.name === (`⬅`) && u
 const backwards = message.createReactionCollector(backwardsFilter, { time: 250000 });
 	
 backwards.on('collect', r => {
- if (page === 1) 
+ if (page === 1)  return;
  page--;
  pagesembed.setDescription(pages[page-1]);
  pagesembed.setFooter(`Page ${page} of ${pages.length}`);
- return message.edit(pagesembed)
+message.edit(pagesembed)
 })
 	
 const forwardsFilter = (reaction, user) => reaction.emoji.name === ('➡') && user.id === message.author.id;
 const forwards = message.createReactionCollector(forwardsFilter, { time: 250000});
 
 forwards.on('collect', r => {
- if (page === pages.length) 
+ if (page === pages.length) return;
 page++;
 pagesembed.setDescription(pages[page-1]);
 pagesembed.setFooter(`Page ${page} of ${pages.length}`);
-return message.edit(pagesembed)
+message.edit(pagesembed)
 })
 		 
 })
