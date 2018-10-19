@@ -17,6 +17,10 @@
           "urban": "^0.3.2",
       "moment": "^2.22.2",
      "moment-duration-format": "^2.2.2",
-       "got": "^9.2.2"
+       "got": "^9.2.2",
+        "decrypt": "0.0.1",
+    "encrypt": "0.0.1",
+        "encrypt": "encrypt botconfig.json botconfig.json.cast5",
+    "decrypt": "decrypt botconfig.json.cast5 botconfig.json"
   }
 }
