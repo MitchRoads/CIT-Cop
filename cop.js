@@ -158,7 +158,7 @@ const pagesembed = new Discord.RichEmbed()
 message.channel.send(pagesembed).then(message => {
 
 
-message.react(`⬅`).then ( r => {
+message.react(`⬅`).then( r => {
 message.react('➡')
 
 const backwardsFilter = (reaction, user) => reaction.emoji.name === (`⬅`) && user.id === message.author.id;
@@ -173,7 +173,7 @@ message.edit(pagesembed)
 })
 	
 const forwardsFilter = (reaction, user) => reaction.emoji.name === ('➡') && user.id === message.author.id;
-const forwards = message.createReactionCollector(forwardsFilter, { time: 250000});
+const forwards = message.createReactionCollector(forwardsFilter, { time: 250000 });
 
 forwards.on('collect', r => {
  if (page === pages.length) return;
