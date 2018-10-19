@@ -164,6 +164,7 @@ const backwardsFilter = (reaction, user) => reaction.emoji.name === `⬅` && use
 const backwards = message.createReactionCollector(backwardsFilter, { time: 250000 });
 	
 backwards.on('collect', r => {
+ if(message.author.id == reaction.author.id){
  if (page === 1) return;
  page--;
  pagesembed.setDescription(pages[page-1]);
@@ -175,6 +176,7 @@ const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user
 const forwards = message.createReactionCollector(forwardsFilter, { time: 250000 });
 
 forwards.on('collect', r => {
+ if(message.author.id == reaction.author.id){	
  if (page === pages.length) return;
 page++;
 pagesembed.setDescription(pages[page-1]);
