@@ -150,11 +150,11 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 let pages = ['This is page one!', 'Second page', 'Third', 'You can add pages', 'All you need to do is add another item in the array', '**Supports markdown and regular chat description property**'];
 let page = 1;
 
-const pageembed = new Discord.RichEmbed()
+const pagesembed = new Discord.RichEmbed()
 .setDescription(pages[page-1])
 .setColor(0x374f6b)
 .setFooter(`Page ${page} of ${page.length}`)
-message.channel.send(pageembed).then(message => {
+message.channel.send(pagesembed).then(message => {
 
 
 message.react(`⬅`).then ( r => {
@@ -179,9 +179,9 @@ const forwards = message.createReactionCollector(forwardsFitler, { time: 60000})
 forwards.on('collect', r => {
  if (page == 1)
  page--;
- moreembed.setDescription(pages[page-1]);
- moreembed.setFooter(`Page ${page} of ${pages.length}`);
- message.edit(moreembed)
+pagesembed.setDescription(pages[page-1]);
+pagesembed.setFooter(`Page ${page} of ${pages.length}`);
+ message.edit(pagesembed)
 })
 		 
 })
