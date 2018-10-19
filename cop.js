@@ -177,7 +177,7 @@ const forwards = message.createReactionCollector(forwardsFilter, { time: 250000}
 
 forwards.on('collect', r => {
  if (page === pages.length) 
-page--;
+page++;
 pagesembed.setDescription(pages[page-1]);
 pagesembed.setFooter(`Page ${page} of ${pages.length}`);
 return message.edit(pagesembed)
