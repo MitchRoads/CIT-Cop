@@ -111,7 +111,7 @@ let defineembed = new Discord.RichEmbed()
     .setDescription(json.definition)
     .setColor(0x374f6b)
     .addField("Example", json.example)
-    .addField("Rating", `<:gip:502687241911402496> ${json.thumbs_up} 👎 ${json.thumbs_down}`, true)
+    .addField("Rating", `👍 ${json.thumbs_up} 👎 ${json.thumbs_down}`, true)
     .setThumbnail("https://i.imgur.com/EPUSjJe.jpg")
     .setFooter(`Added by ${json.author}`)
     .setTimestamp();
