@@ -129,7 +129,7 @@ if(!res || !res.body || !res.body.data) return message.channel.send(`I've failed
     .setImage(res.body.data.image_url)
     .setAuthor("GIF", "https://i.imgur.com/0JtpgIC.png")
     .setTimestamp();
-    message.channel.send(testembed);
+    return message.channel.send(testembed);
   }
 });
 
