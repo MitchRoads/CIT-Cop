@@ -7,7 +7,7 @@ const func = require('./functions.js');
 const weather = require('weather-js');
 const urban = require('urban');
 const got = require('got');
-const api = require('./apikey.json');
+const api = require('./botconfig.json');
 const moment = require('moment');
 require('moment-duration-format');
 
