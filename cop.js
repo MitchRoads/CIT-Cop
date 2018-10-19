@@ -4,10 +4,10 @@ const client = new Discord.Client();
 const config = require('./botconfig.json');
 const { prefix, token } = require('./botconfig.json');
 const func = require('./functions.js');
-const weather = require('weather-js')
+const weather = require('weather-js');
 const urban = require('urban');
 const got = require('got');
-const api = "DuiUHzHScHjzaaGQw5a1E2SgD30OEFjf"
+const api = require('./apikey.json');
 const moment = require('moment');
 require('moment-duration-format');
 
