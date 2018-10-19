@@ -91,9 +91,9 @@ let urbanembed = new Discord.RichEmbed()
     .setTitle([json.word])
     .setDescription(json.definition)
     .setColor(0x374f6b)
+    .addField("Author", json.author)
     .addField("Example", json.example)
     .addField("Rating", `👍 ${json.thumbs_up} 👎 ${json.thumbs_down}`, true)
-    .setFooter("Author", json.author)
     .setTimestamp();
     message.channel.send(urbanembed);
 });
