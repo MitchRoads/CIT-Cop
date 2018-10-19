@@ -126,7 +126,7 @@ if(!res || !res.body || !res.body.data) return message.channel.send(`I've failed
   
     let testembed = new Discord.RichEmbed()
     .setImage(res.body.data.image_url)
-    .setAuthor("GIF")
+    .setAuthor("GIF", "https://i.imgur.com/0JtpgIC.png")
     .setTimestamp();
     message.channel.send(testembed);
   }
