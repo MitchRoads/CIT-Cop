@@ -161,10 +161,8 @@ message.channel.send(pagesembed).then(message => {
 message.react(`⬅`).then ( r => {
 message.react('➡')
 
-
-
-const backwardsFitler = (reaction, user) => reaction.emoji.name === (`⬅`) && user.id === message.author.id;
-const backwards = message.createReactionCollector(backwardsFitler, { time: 250000 });
+const backwardsFilter = (reaction, user) => reaction.emoji.name === (`⬅`) && user.id === message.author.id;
+const backwards = message.createReactionCollector(backwardsFilter, { time: 250000 });
 	
 backwards.on('collect', r => {
  if (page === 1) return; 
@@ -174,8 +172,8 @@ backwards.on('collect', r => {
  message.edit(pagesembed)
 })
 	
-const forwardsFitler = (reaction, user) => reaction.emoji.name === ('➡') && user.id === message.author.id;
-const forwards = message.createReactionCollector(forwardsFitler, { time: 250000});
+const forwardsFilter = (reaction, user) => reaction.emoji.name === ('➡') && user.id === message.author.id;
+const forwards = message.createReactionCollector(forwardsFilter, { time: 250000});
 
 forwards.on('collect', r => {
  if (page === pages.length) return; 
