@@ -4,7 +4,7 @@
   "description": "a bot for soldz's personal server.",
   "main": "cop.js",
   "scripts": {
-   "start": "node cop.js",
+   "start": "node cop.js"
   },
   "author": "Soldz",
   "license": "ISC",
@@ -17,6 +17,6 @@
           "urban": "^0.3.2",
       "moment": "^2.22.2",
      "moment-duration-format": "^2.2.2",
-       "got": "^9.2.2",
+       "got": "^9.2.2"
   }
 }
