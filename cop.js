@@ -178,7 +178,7 @@ const forwards = message.createReactionCollector(forwardsFitler, { time: 60000})
 
 forwards.on('collect', r => {
  if (page == 1)
- page--;
+ page++;
 pagesembed.setDescription(pages[page-1]);
 pagesembed.setFooter(`Page ${page} of ${pages.length}`);
  message.edit(pagesembed)
