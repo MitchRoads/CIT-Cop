@@ -91,9 +91,10 @@ let urbanembed = new Discord.RichEmbed()
     .setTitle([json.word])
     .setDescription(json.definition)
     .setColor(0x374f6b)
-    .addField("Author", json.author)
     .addField("Example", json.example)
     .addField("Rating", `👍 ${json.thumbs_up} 👎 ${json.thumbs_down}`, true)
+    .setThumbnail("https://i.imgur.com/EPUSjJe.jpg")
+    .setFooter("Added by json.author")
     .setTimestamp();
     message.channel.send(urbanembed);
 });
@@ -112,13 +113,15 @@ let defineembed = new Discord.RichEmbed()
     .addField("Example", json.example)
     .addField("Rating", `👍 ${json.thumbs_up} 👎 ${json.thumbs_down}`, true)
     .setThumbnail("https://i.imgur.com/EPUSjJe.jpg")
-    .setFooter("Author", json.author)
+    .setFooter("Added by json.author")
     .setTimestamp();
     message.channel.send(defineembed);
 });
 }
 	
  if (message.content.toLowerCase().startsWith(`${prefix}gif`)) {
+	  let player = message.mentions.members.first() || message.member
+  let user = player.user
   let args = message.content.split(/ +/g).slice(1)
   if (args.length < 1) return message.channel.send(`This isn't a random gif generator, enter in a word.`)
 const res = await got(`http://api.giphy.com/v1/gifs/random?api_key=${api}&tag=${encodeURIComponent(args.join(" "))}`, {json: true})
@@ -127,6 +130,7 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
     let testembed = new Discord.RichEmbed()
     .setImage(res.body.data.image_url)
     .setAuthor("GIF", "https://i.imgur.com/0JtpgIC.png")
+    .setFooter(`Requested By ${user.tag}`)
     .setTimestamp();
     return message.channel.send(testembed);
   }
