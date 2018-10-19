@@ -134,6 +134,11 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
     .setTimestamp();
     return message.channel.send(testembed);
   }
+	
+	 if (message.content.toLowerCase().startsWith(`${prefix}say`)) {
+		   let args = message.content.split(/ +/g).slice(1)
+		 return message.channel.send(args.join(' '))
+	 }
 });
 
 
