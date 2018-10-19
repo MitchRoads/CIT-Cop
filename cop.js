@@ -118,7 +118,7 @@ let defineembed = new Discord.RichEmbed()
     message.channel.send(defineembed);
 });
 }
-  if (message.content.startsWith(`${prefix}gif`)) {
+ if (message.content.toLowerCase().startsWith(`${prefix}gif`)) {
    let args = message.content.slice(1).split(" "); 
   if (args.length < 1) return message.channel.send(`This isn't a random gif generator, enter in a word.`)
 const res = await got(`http://api.giphy.com/v1/gifs/random?api_key=${api}&tag=${encodeURIComponent(args.join(" "))}`, {json: true})
