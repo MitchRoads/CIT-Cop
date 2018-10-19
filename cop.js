@@ -140,6 +140,7 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 		  let player = message.mentions.members.first() || message.member
                   let user = player.user
 		const sayembed = new Discord.RichEmbed()
+	       .setTitle("Say Command")
 	       .setDescription(`${botmessage}`)
                .setColor(0x374f6b)
 	       .setFooter(`Requested By ${user.tag}`)
