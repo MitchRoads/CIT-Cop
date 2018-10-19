@@ -187,7 +187,7 @@ forwards.on('collect', r => {
 		 
 })
 })
-})
+});
 }
 	  
 	  
