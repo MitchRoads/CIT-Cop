@@ -147,13 +147,13 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	 }
 	
 	 if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
-let pages = ['This is page one!', 'Second page', 'Third', 'You can add pages', 'All you need to do is add another item in the array', '**Supports markdown and regular chat description property**'];
+let pages = ['Page One', 'Second page', 'Third Page', 'Fourth Page', 'Aaaaaaa'];
 let page = 1;
 
 const pagesembed = new Discord.RichEmbed()
+.setDescription(pages[page-1])
 .setColor(0x374f6b)
 .setFooter(`Page ${page} of ${pages.length}`)
-.setDescription(pages[page-1])
 message.channel.send(pagesembed).then(message => {
 
 
