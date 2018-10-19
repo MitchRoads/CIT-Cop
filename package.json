@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "a bot for soldz's personal server.",
   "main": "cop.js",
+   "encrypt": "encrypt botconfig.json botconfig.json.cast5",
+    "decrypt": "decrypt botconfig.json.cast5 botconfig.json"
   "scripts": {
    "start": "node cop.js"
   },
@@ -20,7 +22,5 @@
        "got": "^9.2.2",
         "decrypt": "0.0.1",
     "encrypt": "0.0.1",
-        "encrypt": "encrypt botconfig.json botconfig.json.cast5",
-    "decrypt": "decrypt botconfig.json.cast5 botconfig.json"
   }
 }
