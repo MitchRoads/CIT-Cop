@@ -133,4 +133,4 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 });
 
 
-client.login(process.env.BOT_TOKEN); 
+client.login(process.env.BOT_TOKEN.API); 
