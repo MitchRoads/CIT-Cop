@@ -171,6 +171,7 @@ backwards.on('collect', r => {
  pagesembed.setFooter(`Page ${page} of ${pages.length}`);
 message.edit(pagesembed)
 })
+
 	
 const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
 const forwards = message.createReactionCollector(forwardsFilter, { time: 250000 });
@@ -186,6 +187,8 @@ message.edit(pagesembed)
 		 
 })
 })
+}
+}
 }
 	  
 	  
