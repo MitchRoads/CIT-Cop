@@ -141,7 +141,7 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	       .setAuthor(`${client.user.tag}'s Reply`)
                .setColor("#7289da")
                .addField(botmessage)
-		 return message.channel.send(sayembed))
+		 return message.channel.send(sayembed)
 		 message.delete().catch();
 	 }
 	
