@@ -148,20 +148,20 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	
 	 if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
 let pages = ['**Page 1** \n\n **Test**', 
-  '**Page 2** \n\n **Testing**']; 
+             '**Page 2** \n\n **Testing**']; 
 let page = 1;
 
 const pagesembed = new Discord.RichEmbed()
 .setColor(0x374f6b)
 .setFooter(`Page ${page} of ${pages.length}`)
 .setDescription(pages[page-1])
+
 message.channel.send(pagesembed).then(message => {
 
-
-message.react(`⬅`).then( r => {
+message.react('⬅').then( r => {
 message.react('➡')
 
-const backwardsFilter = (reaction, user) => reaction.emoji.name === (`⬅`) && user.id === message.author.id;
+const backwardsFilter = (reaction, user) => reaction.emoji.name === `⬅` && user.id === message.author.id;
 const backwards = message.createReactionCollector(backwardsFilter, { time: 250000 });
 	
 backwards.on('collect', r => {
@@ -172,7 +172,7 @@ backwards.on('collect', r => {
 message.edit(pagesembed)
 })
 	
-const forwardsFilter = (reaction, user) => reaction.emoji.name === ('➡') && user.id === message.author.id;
+const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
 const forwards = message.createReactionCollector(forwardsFilter, { time: 250000 });
 
 forwards.on('collect', r => {
