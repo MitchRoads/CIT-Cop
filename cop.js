@@ -93,7 +93,6 @@ let urbanembed = new Discord.RichEmbed()
     .setColor(0x374f6b)
     .addField("Example", json.example)
     .addField("Rating", `👍 ${json.thumbs_up} 👎 ${json.thumbs_down}`, true)
-    .setThumbnail("https://i.imgur.com/EPUSjJe.jpg")
     .setFooter("Author", json.author)
     .setTimestamp();
     message.channel.send(urbanembed);
