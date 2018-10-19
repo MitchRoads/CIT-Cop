@@ -85,7 +85,7 @@ let str = args.join(" ");
 urban(str).first(json => {
  if(!json) return message.channel.send("No results.")
 
-let defineembed = new Discord.RichEmbed()
+let urbanembed = new Discord.RichEmbed()
     .setAuthor("Urban Dictionary", "https://i.imgur.com/EPUSjJe.jpg")
     .setURL(json.permalink)
     .setTitle([json.word])
@@ -96,7 +96,7 @@ let defineembed = new Discord.RichEmbed()
     .setThumbnail("https://i.imgur.com/EPUSjJe.jpg")
     .setFooter("Author", json.author)
     .setTimestamp();
-    message.channel.send(defineembed);
+    message.channel.send(urbanembed);
 });
 }
 	
