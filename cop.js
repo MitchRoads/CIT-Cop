@@ -94,7 +94,7 @@ let urbanembed = new Discord.RichEmbed()
     .addField("Example", json.example)
     .addField("Rating", `👍 ${json.thumbs_up} 👎 ${json.thumbs_down}`, true)
     .setThumbnail("https://i.imgur.com/EPUSjJe.jpg")
-    .setFooter("Added by json.author")
+    .setFooter(`Added by ${json.author}`)
     .setTimestamp();
     message.channel.send(urbanembed);
 });
@@ -113,7 +113,7 @@ let defineembed = new Discord.RichEmbed()
     .addField("Example", json.example)
     .addField("Rating", `👍 ${json.thumbs_up} 👎 ${json.thumbs_down}`, true)
     .setThumbnail("https://i.imgur.com/EPUSjJe.jpg")
-    .setFooter("Added by json.author")
+    .setFooter(`Added by ${json.author}`)
     .setTimestamp();
     message.channel.send(defineembed);
 });
