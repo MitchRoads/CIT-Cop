@@ -120,10 +120,10 @@ let defineembed = new Discord.RichEmbed()
 }
 	
  if (message.content.toLowerCase().startsWith(`${prefix}gif`)) {
-   let args = message.content.slice(1).split(" "); 
+  let args = message.content.split(/ +/g).slice(1)
   if (args.length < 1) return message.channel.send(`This isn't a random gif generator, enter in a word.`)
 const res = await got(`http://api.giphy.com/v1/gifs/random?api_key=${api}&tag=${encodeURIComponent(args.join(" "))}`, {json: true})
-if(!res || !res.body || !res.body.data) return message.channel.send(`I've failed to find any type of GIF that relates to the word.`)
+if(!res) return message.channel.send(`I've failed to find any type of GIF that relates to the word.`)
   
     let testembed = new Discord.RichEmbed()
     .setImage(res.body.data.image_url)
