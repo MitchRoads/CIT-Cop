@@ -7,6 +7,7 @@ const func = require('./functions.js');
 const weather = require('weather-js');
 const urban = require('urban');
 const got = require('got');
+const test = "https://i.imgur.com/0JtpgIC.png"
 const moment = require('moment');
 require('moment-duration-format');
 
@@ -115,7 +116,7 @@ let defineembed = new Discord.RichEmbed()
     .setFooter("Author", json.author)
     .setTimestamp();
     message.channel.send(defineembed);
-    message.react("https://i.imgur.com/0JtpgIC.png")
+    message.react(test)
 });
 }
 	
