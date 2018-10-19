@@ -147,7 +147,7 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	 }
 	
 	 if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
-let pages = ['** General Commands** \n\n **ping**  \n*Shows The Responce Time Of The Bot* \n **help**  \n*Shows The Help Command* \n **gcl**  \n*Gives You The Gcl Invite Link* \n **breakdown**  \n*Gives The Breakdown Of The Current Season*', 
+let pages = ['** General Commands** \n\n **ping**  \n*Shows The Responce Time Of The Bot* \n **help**  \n*Shows The Help Command* \n **gcl**  \n*Gives You The Gcl Invite Link* \n **breakdown**  \n', 
   '**Rosters Commands** \n\n **knights**  \n*Shows List Of Knights Division* \n **warriors**   \n*Shows List Of Warriors Division* \n **cavaliers**  \n*Shows List Of Cavaliers Division* \n **spartans**   \n*Shows List Of Spartans Division*'];
 let page = 1;
 
@@ -164,7 +164,7 @@ message.react('➡')
 
 
 const backwardsFitler = (reaction, user) => reaction.emoji.name === (`⬅`) && user.id === message.author.id;
-const backwards = message.createReactionCollector(backwardsFitler, { time: 60000 });
+const backwards = message.createReactionCollector(backwardsFitler, { time: 250000 });
 	
 backwards.on('collect', r => {
  if (page == 1)
@@ -175,7 +175,7 @@ backwards.on('collect', r => {
 })
 	
 const forwardsFitler = (reaction, user) => reaction.emoji.name === ('➡') && user.id === message.author.id;
-const forwards = message.createReactionCollector(forwardsFitler, { time: 60000});
+const forwards = message.createReactionCollector(forwardsFitler, { time: 250000});
 
 forwards.on('collect', r => {
  if (page == 1)
