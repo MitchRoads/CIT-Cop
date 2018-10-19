@@ -163,7 +163,7 @@ message.react('➡')
 
 
 const backwardsFitler = (reaction, user) => reaction.emoji.name === (`⬅`) && user.id === message.author.id;
-const backwards = message.creatReactionCollector(backwardsFitler, { time: 60000 });
+const backwards = message.createReactionCollector(backwardsFitler, { time: 60000 });
 	
 backwards.on('collect', r => {
  if (page == 1)
