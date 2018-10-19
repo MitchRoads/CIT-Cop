@@ -160,17 +160,19 @@ message.channel.send(pageembed).then(message => {
 
 message.react(`⬅`).then ( r => {
 message.react('➡')
+})
+
 
 const backwardsFitler = (reaction, user) => reaction.emoji.name === (`⬅`) && user.id === message.author.id;
 const backwards = message.creatReactionCollector(backwardsFitler, { time: 60000 });
-
+	
 backwards.on('collect' r => {
  if (page == 1)
  page--;
  pagesembed.setDescription(pages[page-1]);
  pagesembed.setFooter(`Page ${page} of ${pages.length}`);
  message.edit(pagesembed)
-});
+})
 	
 const forwardsFitler = (reaction, user) => reaction.emoji.name === ('➡') && user.id === message.author.id;
 const forwards = message.createReactionCollector(forwardsFitler, { time: 60000});
@@ -184,7 +186,7 @@ forwards.on('collect' r => {
 })
 		 
 })
-})
+
 }
 }
 });
