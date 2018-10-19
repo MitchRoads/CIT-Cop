@@ -178,7 +178,7 @@ const forwardsFitler = (reaction, user) => reaction.emoji.name === ('➡') && us
 const forwards = message.createReactionCollector(forwardsFitler, { time: 250000});
 
 forwards.on('collect', r => {
- if (page === 1) return; 
+ if (page === 2) return; 
 page++;
 pagesembed.setDescription(pages[page-1]);
 pagesembed.setFooter(`Page ${page} of ${pages.length}`);
