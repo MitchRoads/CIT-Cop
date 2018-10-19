@@ -4,7 +4,7 @@
   "description": "a bot for soldz's personal server.",
   "main": "cop.js",
    "encrypt": "encrypt botconfig.json botconfig.json.cast5",
-    "decrypt": "decrypt botconfig.json.cast5 botconfig.json"
+    "decrypt": "decrypt botconfig.json.cast5 botconfig.json",
   "scripts": {
    "start": "node cop.js"
   },
