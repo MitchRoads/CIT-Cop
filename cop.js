@@ -138,7 +138,7 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 		  let args = message.content.split(/ +/g).slice(1)
 		  let botmessage = args.join(' ')
 		const sayembed = new Discord.RichEmbed()
-	       .setAuthor(`"And I say..!`)
+	       .setAuthor()
 	       .setDescription(`${botmessage}`)
                .setColor(0x374f6b)
 	       message.delete().catch();
