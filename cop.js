@@ -137,6 +137,7 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	
 	 if (message.content.toLowerCase().startsWith(`${prefix}say`)) {
 		   let args = message.content.split(/ +/g).slice(1)
+		     message.delete().catch();
 		 return message.channel.send(args.join(' '))
 	 }
 });
