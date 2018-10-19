@@ -146,6 +146,45 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 		 return message.channel.send(sayembed)
 	 }
 	
+	 if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
+let pages = ['This is page one!', 'Second page', 'Third', 'You can add pages', 'All you need to do is add another item in the array', '**Supports markdown and regular chat description propert]:
+let page = 1;
+
+
+const pageembed = new Discord.MessageEmbed()
+.setDescription(pages[page-1])
+.setColor(0x374f6b)
+.setFooter(`Page ${page} of ${page.length}`)
+message.channel.send(pageembed).then(message => {
+
+
+message.react(`⬅`).then ( r => {
+message.react('➡')
+
+const backwardsFitler = (reaction, user) => reaction.emoji.name === (`⬅`) && user.id === message.author.id;
+const backwards = message.creatReactionCollector(backwardsFitler, { time: 60000 });
+
+backwards.on('collect' r => {
+ if page == 1)
+ page--;
+ pagesembed.setDescription(pages[page-1]);
+ pagesembed.setFooter(`Page ${page} of ${pages.length}`);
+ message.edit(pagesembed)
+})
+const forwardsFitler = (reaction, user) => reaction.emoji.name === ('➡') && user.id === message.author.id;
+const forwards = message.createReactionCollector(forwardsFitler, { time: 60000});
+
+forwards.on('collect' r => {
+ if page == 1)
+ page--;
+ moreembed.setDescription(pages[page-1]);
+ moreembed.setFooter(`Page ${page} of ${pages.length}`);
+ message.edit(moreembed)
+})
+})
+})
+}
+}
 });
 
 
