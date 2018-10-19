@@ -138,11 +138,11 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 		  let args = message.content.split(/ +/g).slice(1)
 		  let botmessage = args.join(' ')
 		const sayembed = new Discord.RichEmbed()
-	       .setAuthor(`${client.user.tag}'s Reply`)
-               .setColor("#7289da")
-               .addField(botmessage)
+	       .setAuthor(`"And I say..!`)
+	       .setDescription(`${botmessage}`)
+               .setColor(0x374f6b)
+	       message.delete().catch();
 		 return message.channel.send(sayembed)
-		 message.delete().catch();
 	 }
 	
 });
