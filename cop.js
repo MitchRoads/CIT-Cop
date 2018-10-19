@@ -97,6 +97,7 @@ let urbanembed = new Discord.RichEmbed()
     .setFooter(`Added by ${json.author}`)
     .setTimestamp();
     message.channel.send(urbanembed);
+    message.react(test)
 });
 }
 	
