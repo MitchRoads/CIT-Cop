@@ -153,7 +153,7 @@ let page = 1;
 const pagesembed = new Discord.RichEmbed()
 .setDescription(pages[page-1])
 .setColor(0x374f6b)
-.setFooter(`Page ${page} of ${page.length}`)
+.setFooter(`Page ${page} of ${pages.length}`)
 message.channel.send(pagesembed).then(message => {
 
 
