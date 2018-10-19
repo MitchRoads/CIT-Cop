@@ -147,7 +147,8 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	 }
 	
 	 if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
-let pages = ['Page One', 'Second page', 'Third Page', 'Fourth Page', 'Aaaaaaa'];
+let pages = ['** General Commands** \n\n **ping**  \n*Shows The Responce Time Of The Bot* \n **help**  \n*Shows The Help Command* \n **gcl**  \n*Gives You The Gcl Invite Link* \n **breakdown**  \n*Gives The Breakdown Of The Current Season*', 
+  '**Rosters Commands** \n\n **knights**  \n*Shows List Of Knights Division* \n **warriors**   \n*Shows List Of Warriors Division* \n **cavaliers**'];
 let page = 1;
 
 const pagesembed = new Discord.RichEmbed()
