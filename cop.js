@@ -116,7 +116,6 @@ let defineembed = new Discord.RichEmbed()
     .setFooter("Author", json.author)
     .setTimestamp();
     message.channel.send(defineembed);
-    message.react(test)
 });
 }
 	
