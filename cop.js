@@ -7,7 +7,7 @@ const func = require('./functions.js');
 const weather = require('weather-js');
 const urban = require('urban');
 const got = require('got');
-const api = "DuiUHzHScHjzaaGQw5a1E2SgD30OEFjf"
+const api = "DuiUHzHScHjzaaGQw5a1E2SgD30OEFjf";
 const moment = require('moment');
 require('moment-duration-format');
 
@@ -118,9 +118,10 @@ let defineembed = new Discord.RichEmbed()
     message.channel.send(defineembed);
 });
 }
+	
  if (message.content.toLowerCase().startsWith(`${prefix}gif`)) {
    let args = message.content.slice(1).split(" "); 
-  if (args.length < 1) return message.channel.send(`This isn't a random gif generator, enter in a word.`)
+  if (args.slice(1).join(" ")) return message.channel.send(`This isn't a random gif generator, enter in a word.`)
 const res = await got(`http://api.giphy.com/v1/gifs/random?api_key=${api}&tag=${encodeURIComponent(args.join(" "))}`, {json: true})
 if(!res || !res.body || !res.body.data) return message.channel.send(`I've failed to find any type of GIF that relates to the word.`)
   
