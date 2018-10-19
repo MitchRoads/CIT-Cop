@@ -143,7 +143,6 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	       .setDescription(`${botmessage}`)
                .setColor(0x374f6b)
 	       .setFooter(`Requested By ${user.tag}`)
-               .setTimestamp();
 	       message.delete().catch();
 		 return message.channel.send(sayembed)
 	 }
