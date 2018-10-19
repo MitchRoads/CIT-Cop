@@ -177,8 +177,8 @@ const forwardsFilter = (reaction, user) => reaction.emoji.name === ('➡') && us
 const forwards = message.createReactionCollector(forwardsFilter, { time: 250000});
 
 forwards.on('collect', r => {
- if (page === 1) 
-page++;
+ if (page === pages.length) 
+page--;
 pagesembed.setDescription(pages[page-1]);
 pagesembed.setFooter(`Page ${page} of ${pages.length}`);
  message.edit(pagesembed)
