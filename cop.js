@@ -145,8 +145,9 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 		 return message.channel.send(sayembed)
 	 }
 	
-	if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {	
-let pages = ['**Comands** \n\n **w!usage**  \nDisplays a help page that provides you with the commands of the bot. \n **help**  \n*Shows The Help Command* \n **gcl**  \n*Gives You The Gcl Invite Link* \n **breakdown**  \n*Gives The Breakdown Of The Current Season*', 
+	if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
+let server = message.guild.name;
+let pages = ['**Below are the commands for this bot, enjoy and use them respectfully.** \n\n ☀ `w!usage` \nDisplays a help page that provides you with the commands of the bot. \n ⛅ `w!weather`  \nDisplays the weather in any valid (real) location you enter. \n 🌥 `w!serverinfo`  \n`Displays information about ${server}.` \n ☁ `w!userinfo`  \nDisplays information on yourself and any user you mention., 
   '**Rosters Commands** \n\n **knights**  \n*Shows List Of Knights Division* \n **warriors**   \n*Shows List Of Warriors Division* \n **cavaliers**  \n*Shows List Of Cavaliers Division* \n **spartans**   \n*Shows List Of Spartans Division*', ]; 
   let page = 1; 
  
