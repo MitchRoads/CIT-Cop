@@ -146,22 +146,22 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	 }
 	
 	if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {	
-let pages = ['** General Commands** \n\n **ping**  \n*Shows The Responce Time Of The Bot* \n **help**  \n*Shows The Help Command* \n **gcl**  \n*Gives You The Gcl Invite Link* \n **breakdown**  \n*Gives The Breakdown Of The Current Season*', 
+let pages = ['**Comands** \n\n **w!usage**  \nDisplays a help page that provides you with the commands of the bot. \n **help**  \n*Shows The Help Command* \n **gcl**  \n*Gives You The Gcl Invite Link* \n **breakdown**  \n*Gives The Breakdown Of The Current Season*', 
   '**Rosters Commands** \n\n **knights**  \n*Shows List Of Knights Division* \n **warriors**   \n*Shows List Of Warriors Division* \n **cavaliers**  \n*Shows List Of Cavaliers Division* \n **spartans**   \n*Shows List Of Spartans Division*', ]; 
   let page = 1; 
  
  const embed = new Discord.RichEmbed() 
-    .setColor("RANDOM")
+    .setColor(0x374f6b)
     .setFooter(`Page ${page} of ${pages.length}`) 
     .setDescription(pages[page-1])
  
   message.channel.send(embed).then(msg => { 
    
-    msg.react('⏪').then( r => { 
-      msg.react('⏩') 
+    msg.react('⬅').then( r => { 
+      msg.react('➡') 
      
-      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
-      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id; 
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id; 
      
       const backwards = msg.createReactionCollector(backwardsFilter, { time: 250000 }); 
       const forwards = msg.createReactionCollector(forwardsFilter, { time: 250000 }); 
