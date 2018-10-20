@@ -147,8 +147,9 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 	
 	if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {
 let server = message.guild.name;
-let pages = ['**Below are the commands for this bot, enjoy and use them respectfully.** \n\n ☀ `w!usage` \nDisplays a help page that provides you with the commands of the bot. \n ⛅ `w!weather`  \nDisplays the weather in any valid (real) location you enter.\n 🌥 `w!serverinfo`  \n Displays information about `${server}.` \n ☁ `w!userinfo`  \nDisplays information on yourself and any user you mention.', 
-  '**Rosters Commands** \n\n **knights**  \n*Shows List Of Knights Division* \n **warriors**   \n*Shows List Of Warriors Division* \n **cavaliers**  \n*Shows List Of Cavaliers Division* \n **spartans**   \n*Shows List Of Spartans Division*', ]; 
+let pages = ['**Information Commands.** \n\n ☀ `w!usage` \nDisplays a help page that provides you with the commands of the bot. \n ⛅ `w!weather`  \nDisplays the weather in any valid (real) location you enter.\n 🌥 `w!serverinfo`  \n Displays information about the server. \n ☁ `w!userinfo`  \nDisplays information on yourself and any user you mention. \n 🌩 `w!botinfo` \nDisplays infomation on the bot and an invite if you want to add it to your server as well.', 
+  '**Fun Commands** \n\n 🌧 `w!avatar`  \nDisplays the avatar/pfp (profile picture) of yourself or any user you mention. \n 🌨 `w!define`  \nDisplays the definition of a word you input. \n 🌦 `w!randomurban`  \nDisplays the definition of a random word. \n 📢 `w!say`   \nDisplays text you input into it. \n ⚠ `w!hello` \nThe name of the command mostly speaks for itself... \n <:gip:502687241911402496> `w!gif` \nDisplays a gif of a word you input. \n 🏓 `w!ping` \nDisplays your ping. Simple enough.', 
+  '**Report Commands.**	\n\n ⛈ `w!reporthelp` \nDisplays a helpful usage sentance for the comamnd: w!reportbug. \n 🌪 `w!reportbug` \nIf you have any issues/find any bugs/errors with these commands, send us issue/error/bug reports here. Thanks.',]; 
   let page = 1; 
  
  const embed = new Discord.RichEmbed() 
@@ -164,8 +165,8 @@ let pages = ['**Below are the commands for this bot, enjoy and use them respectf
       const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
       const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id; 
      
-      const backwards = msg.createReactionCollector(backwardsFilter, { time: 250000 }); 
-      const forwards = msg.createReactionCollector(forwardsFilter, { time: 250000 }); 
+      const backwards = msg.createReactionCollector(backwardsFilter, { time: 60000 }); 
+      const forwards = msg.createReactionCollector(forwardsFilter, { time: 60000 }); 
      
       
       backwards.on('collect', r => { 
