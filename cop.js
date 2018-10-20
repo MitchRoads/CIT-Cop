@@ -7,7 +7,6 @@ const func = require('./functions.js');
 const weather = require('weather-js');
 const urban = require('urban');
 const got = require('got');
-const test = "https://i.imgur.com/0JtpgIC.png"
 const moment = require('moment');
 require('moment-duration-format');
 
@@ -146,9 +145,49 @@ if(!res) return message.channel.send(`I've failed to find any type of GIF that r
 		 return message.channel.send(sayembed)
 	 }
 	
-
+	if (message.content.toLowerCase().startsWith(`${prefix}pages`)) {	
+let pages = ['** General Commands** \n\n **ping**  \n*Shows The Responce Time Of The Bot* \n **help**  \n*Shows The Help Command* \n **gcl**  \n*Gives You The Gcl Invite Link* \n **breakdown**  \n*Gives The Breakdown Of The Current Season*', 
+  '**Rosters Commands** \n\n **knights**  \n*Shows List Of Knights Division* \n **warriors**   \n*Shows List Of Warriors Division* \n **cavaliers**  \n*Shows List Of Cavaliers Division* \n **spartans**   \n*Shows List Of Spartans Division*', ]; 
+  let page = 1; 
+ 
+ const embed = new Discord.RichEmbed() 
+    .setColor("RANDOM")
+    .setFooter(`Page ${page} of ${pages.length}`) 
+    .setDescription(pages[page-1])
+ 
+  message.channel.send(embed).then(msg => { 
+   
+    msg.react('⏪').then( r => { 
+      msg.react('⏩') 
+     
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id; 
+     
+      const backwards = msg.createReactionCollector(backwardsFilter, { time: 250000 }); 
+      const forwards = msg.createReactionCollector(forwardsFilter, { time: 250000 }); 
+     
+      
+      backwards.on('collect', r => { 
+        if (page === 1) return; 
+        page--; 
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`); 
+        msg.edit(embed) 
+      })
+     
+      forwards.on('collect', r => { 
+        if (page === pages.length) return; 
+        page++; 
+        embed.setDescription(pages[page-1]); 
+        embed.setFooter(`Page ${page} of ${pages.length}`); 
+        msg.edit(embed) 
+      })
+   
+    })
+ 
+  })
 	  
-	  
+}
 	  
 	  
 });
