@@ -190,7 +190,16 @@ let pages = ['**Information Commands.** \n\n ☀ `w!usage` \nDisplays a help pag
   })
 	  
 }
-	  
-	  
+});
+
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const logging = member.guild.channels.find(channel => channel.name === "general"); 
+    logging.send(`${member.user.tag} joined using invite code ${invite.code} from ${inviter.tag}. Invite was used ${invite.uses} times since its creation.`);
+  });
 });
 client.login(process.env.BOT_TOKEN); 
