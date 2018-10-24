@@ -13,6 +13,18 @@ require('moment-duration-format');
   client.on("ready", async () => {
   console.log(`${client.user.username} is on his way to the tech team!`);
   client.user.setActivity("Cop In-Training 2.0", {type: "WATCHING"});
+	  
+	  let actvNum = 0;
+
+	  setInterval(function() {
+ if (activNum === 0) {
+   client.user.setActivity("Cop In-Training 2.0", {type: "WATCHING"});
+   activNum = 1;
+ } else if (activNum === 1) {
+   client.user.setActivity("CSGO | c!quote")
+   activNum = 0;
+ }
+}, 3 * 1000);
 });
 
 client.on('message', async (message) => {
